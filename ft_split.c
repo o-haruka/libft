@@ -1,58 +1,86 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vscode <vscode@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/10 02:32:17 by vscode            #+#    #+#             */
+/*   Updated: 2025/05/10 03:04:07 by vscode           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static size_t ft_count_words(const char *s, char c) {
-    size_t count = 0;
-    while (*s) {
-        while (*s == c)
-            s++;
-        if (*s) {
-            count++;
-            while (*s && *s != c)
-                s++;
-        }
-    }
-    return count;
+#include <stdlib.h>
+
+static size_t	count_words(char const *s, char c)
+{
+	size_t	count;
+
+	count = 0;
+	while (*s)
+	{
+		if (*s != c)
+		{
+			count++;
+			while (*s && *s != c)
+				s++;
+		}
+		else
+			s++;
+	}
+	return (count);
 }
 
-static char *ft_copy_word(const char *s, size_t len) {
-    char *word = (char *)malloc(len + 1);
-    if (!word)
-        return NULL;
-    ft_memcpy(word, s, len);
-    word[len] = '\0';
-    return word;
+static char	*extract_word(char const *s, size_t *i, char c)
+{
+	char	*word;
+	size_t	start;
+	size_t	len;
+
+	start = *i;
+	while (s[*i] && s[*i] != c)
+		(*i)++;
+	len = *i - start;
+	word = (char *)malloc(sizeof(char) * (len + 1));
+	if (!word)
+		return (NULL);
+	while (len--)
+		word[len] = s[start + len];
+	word[*i - start] = '\0';
+	return (word);
 }
 
-static void ft_free_array(char **array, size_t i) {
-    while (i > 0)
-        free(array[--i]);
-    free(array);
+static void	free_array(char **array, size_t index)
+{
+	while (index--)
+		free(array[index]);
+	free(array);
 }
 
-char **ft_split(char const *s, char c) {
-    if (!s)
-        return NULL;
+char	**ft_split(char const *s, char c)
+{
+	char	**result;
+	size_t	i;
+	size_t	j;
 
-    size_t word_count = ft_count_words(s, c);
-    char **result = (char **)malloc(sizeof(char *) * (word_count + 1));
-    if (!result)
-        return NULL;
-
-    size_t i = 0;
-    while (i < word_count) {
-        while (*s == c)
-            s++;
-        size_t len = 0;
-        while (s[len] && s[len] != c)
-            len++;
-        result[i] = ft_copy_word(s, len);
-        if (!result[i]) {
-            ft_free_array(result, i);
-            return NULL;
-        }
-        s += len;
-        i++;
-    }
-    result[i] = NULL;
-    return result;
+	if (!s)
+		return (NULL);
+	result = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!result)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		if (s[i] != c)
+		{
+			result[j++] = extract_word(s, &i, c);
+			if (!result[j - 1])
+				return (free_array(result, j), NULL);
+		}
+		else
+			i++;
+	}
+	result[j] = NULL;
+	return (result);
 }

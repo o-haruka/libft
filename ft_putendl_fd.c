@@ -1,5 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vscode <vscode@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/09 19:38:52 by vscode            #+#    #+#             */
+/*   Updated: 2025/05/09 19:38:53 by vscode           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-void ft_putendl_fd(char *s, int fd){
-    ft_putstr_fd(s, 1);
-    ft_putchar_fd('\n', fd);
+
+void	ft_putendl_fd(char *s, int fd)
+{
+	ft_putstr_fd(s, 1);
+	ft_putchar_fd('\n', fd);
 }

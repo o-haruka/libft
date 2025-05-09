@@ -1,20 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vscode <vscode@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/09 19:39:03 by vscode            #+#    #+#             */
+/*   Updated: 2025/05/09 19:39:14 by vscode           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd){
-    char c;
-    if (n == -2147483648) {
-        ft_putstr_fd("-2147483648", fd);
-        return;
-    }
+void	ft_putnbr_fd(int n, int fd)
+{
+	char	c;
 
-    if(n < 0){
-        ft_putchar_fd('-', fd);
-        n = -n;
-    }
-
-    if(n >= 10){
-        ft_putnbr_fd(n / 10, fd);
-    }
-    c = (n % 10) + '0';
-    write(fd, &c, 1);
+	if (n == -2147483648)
+	{
+		ft_putstr_fd("-2147483648", fd);
+		return ;
+	}
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n = -n;
+	}
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+	}
+	c = (n % 10) + '0';
+	write(fd, &c, 1);
 }

@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: vscode <vscode@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/05/09 20:36:41 by vscode            #+#    #+#              #
+#    Updated: 2025/05/10 03:04:41 by vscode           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -31,14 +43,15 @@ ft_atoi.c \
 ft_substr.c \
 ft_strjoin.c \
 ft_strtrim.c \
-ft_split.c \
 ft_itoa.c \
 ft_putchar_fd.c \
 ft_putstr_fd.c \
 ft_putendl_fd.c \
 ft_putnbr_fd.c \
 ft_strmapi.c \
-# ft_striteri.c \
+ft_striteri.c \
+ft_split.c \
+
 
 OBJ = $(SRC:.c=.o)
 

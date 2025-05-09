@@ -1,28 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vscode <vscode@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/09 19:46:50 by vscode            #+#    #+#             */
+/*   Updated: 2025/05/09 19:47:26 by vscode           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char *ft_strdup(const char *s1){
-    char *cpy;
-    size_t len;
+char	*ft_strdup(const char *s1)
+{
+	char	*cpy;
+	size_t	len;
 
-    // "+1" for NUL terminating
-    len = ft_strlen(s1) + 1;
-
-    cpy = (char *)malloc(sizeof(char) * (len));
-
-    // 入力文字列 s が NULL の場合の動作は未定義（多くの実装でセグメンテーション違反）。
-    if (!cpy)
-        return (NULL);
-
-    ft_strlcpy(cpy, s1, len);
-
-    return (cpy);
+	len = ft_strlen(s1) + 1;
+	cpy = (char *)malloc(sizeof(char) * (len));
+	if (!cpy)
+		return (NULL);
+	ft_strlcpy(cpy, s1, len);
+	return (cpy);
 }
-
-// int main(void) {
-//     char str[] = "hello";
-//     char *cpy = ft_strdup(str);
-//     printf("コピー前：　%s\n", str);
-//     printf("コピー後：　%s\n", cpy);
-//     free(cpy);
-//     return 0;
-// }
