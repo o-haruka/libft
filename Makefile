@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vscode <vscode@student.42.fr>              +#+  +:+       +#+         #
+#    By: homura <homura@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/09 20:36:41 by vscode            #+#    #+#              #
-#    Updated: 2025/05/10 03:04:41 by vscode           ###   ########.fr        #
+#    Updated: 2025/05/10 19:48:42 by homura           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 HEADER = libft.h
-# SRC := $(wildcard ft_*.c)
 
 SRC = \
 ft_isalpha.c \

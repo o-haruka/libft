@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vscode <vscode@student.42.fr>              +#+  +:+       +#+        */
+/*   By: homura <homura@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 20:10:05 by vscode            #+#    #+#             */
-/*   Updated: 2025/05/09 20:10:10 by vscode           ###   ########.fr       */
+/*   Updated: 2025/05/10 18:15:50 by homura           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strrchr(const char *s, int c)
 		}
 		s++;
 	}
-	if (c == '\0')
+	if ((char)c == '\0')
 	{
 		return ((char *)s);
 	}
