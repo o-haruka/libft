@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: homura <homura@student.42tokyo.jp>         +#+  +:+       +#+        */
+/*   By: harukaomura <harukaomura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 20:49:48 by vscode            #+#    #+#             */
-/*   Updated: 2025/05/10 19:12:16 by homura           ###   ########.fr       */
+/*   Updated: 2025/05/11 16:30:49 by harukaomura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ void	*ft_calloc(size_t count, size_t size)
 	if (size > SIZE_MAX / count)
 		return (NULL);
 	total_size = count * size;
-	if (total_size == 0)
-		total_size = 1;
 	ptr = malloc(total_size);
 	if (!ptr)
 		return (NULL);
