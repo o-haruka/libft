@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vscode <vscode@student.42.fr>              +#+  +:+       +#+        */
+/*   By: harukaomura <harukaomura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 18:23:17 by vscode            #+#    #+#             */
-/*   Updated: 2025/05/09 18:38:52 by vscode           ###   ########.fr       */
+/*   Updated: 2025/05/11 20:19:04 by harukaomura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_digits(int n)
+static int	count_digits(long n)
 {
 	int	count;
 
