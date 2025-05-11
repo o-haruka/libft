@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vscode <vscode@student.42.fr>              +#+  +:+       +#+        */
+/*   By: harukaomura <harukaomura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 20:11:58 by vscode            #+#    #+#             */
-/*   Updated: 2025/05/09 20:11:59 by vscode           ###   ########.fr       */
+/*   Updated: 2025/05/11 16:37:00 by harukaomura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,6 @@
 int	ft_toupper(int c)
 {
 	if ('a' <= c && c <= 'z')
-	{
 		return (c - 32);
-	}
-	else
-	{
-		return (c);
-	}
+	return (c);
 }
