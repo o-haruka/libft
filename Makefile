@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: homura <homura@student.42tokyo.jp>         +#+  +:+       +#+         #
+#    By: harukaomura <harukaomura@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/09 20:36:41 by vscode            #+#    #+#              #
-#    Updated: 2025/05/10 19:48:42 by homura           ###   ########.fr        #
+#    Updated: 2025/05/16 16:19:30 by harukaomura      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,13 +49,25 @@ ft_putendl_fd.c \
 ft_putnbr_fd.c \
 ft_strmapi.c \
 ft_striteri.c \
-ft_split.c \
+ft_split.c
 
+# BONUS = \
+# ft_lstnew.c \
+# ft_lstadd_front.c \
+# ft_lstsize.c \
+# ft_lstlast.c \
+# ft_lstadd_back.c \
+# ft_lstdelone.c \
+# ft_lstclear.c \
+# ft_lstiter.c \
+# ft_lstmap.c \
 
-OBJ = $(SRC:.c=.o)
-
+OBJ = $(SRC:%.c=%.o)
+OBJ_BONUS = $(BONUS:%.c=%.o)
 
 all: $(NAME)
+
+bonus: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
