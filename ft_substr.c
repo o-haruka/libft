@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vscode <vscode@student.42.fr>              +#+  +:+       +#+        */
+/*   By: harukaomura <harukaomura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 20:10:38 by vscode            #+#    #+#             */
-/*   Updated: 2025/05/09 20:10:55 by vscode           ###   ########.fr       */
+/*   Updated: 2025/05/22 22:48:09 by harukaomura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	str_len = ft_strlen(s);
-	if (start > str_len)
+	if (start >= str_len)
 		return (ft_strdup(""));
 	substr_len = str_len - start;
 	if (substr_len > len)
@@ -30,6 +30,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!substr)
 		return (NULL);
 	ft_strlcpy(substr, s + start, substr_len + 1);
-	substr[substr_len] = '\0';
 	return (substr);
 }

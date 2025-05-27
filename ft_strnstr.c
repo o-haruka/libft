@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vscode <vscode@student.42.fr>              +#+  +:+       +#+        */
+/*   By: harukaomura <harukaomura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 19:55:01 by vscode            #+#    #+#             */
-/*   Updated: 2025/05/09 20:03:28 by vscode           ###   ########.fr       */
+/*   Updated: 2025/05/22 13:06:08 by harukaomura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	j;
-	char	*result;
 
 	if (*needle == '\0')
 		return ((char *)haystack);
@@ -24,15 +23,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	while (i < len && haystack[i] != '\0')
 	{
 		j = 0;
-		while (i + j < len && haystack[i + j] == needle[j])
-		{
+		while (needle[j]!='\0' && (i + j) < len && haystack[i + j] == needle[j])
 			j++;
-			if (needle[j] == '\0')
-			{
-				result = (char *)(haystack + i);
-				return (result);
-			}
-		}
+		if (needle[j] == '\0')
+			return (char *)(haystack + i);
 		i++;
 	}
 	return (NULL);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vscode <vscode@student.42.fr>              +#+  +:+       +#+        */
+/*   By: harukaomura <harukaomura@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 19:39:03 by vscode            #+#    #+#             */
-/*   Updated: 2025/05/09 19:39:14 by vscode           ###   ########.fr       */
+/*   Updated: 2025/05/27 17:56:04 by harukaomura      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,18 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	c;
+	long	num;
 
-	if (n == -2147483648)
-	{
-		ft_putstr_fd("-2147483648", fd);
-		return ;
-	}
-	if (n < 0)
+	num = n;
+	if (num < 0)
 	{
 		ft_putchar_fd('-', fd);
-		n = -n;
+		num = -num;
 	}
-	if (n >= 10)
+	if (num >= 10)
 	{
-		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(num / 10, fd);
 	}
-	c = (n % 10) + '0';
+	c = (num % 10) + '0';
 	write(fd, &c, 1);
 }
