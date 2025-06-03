@@ -6,7 +6,7 @@
 #    By: homura <homura@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/09 20:36:41 by vscode            #+#    #+#              #
-#    Updated: 2025/05/27 20:28:42 by homura           ###   ########.fr        #
+#    Updated: 2025/06/03 16:20:59 by homura           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 HEADER = libft.h
 
-SRC = \
+SRCS = \
 ft_isalpha.c \
 ft_isdigit.c \
 ft_isalnum.c \
@@ -51,7 +51,19 @@ ft_strmapi.c \
 ft_striteri.c \
 ft_split.c
 
-OBJ = $(SRC:%.c=%.o)
+BONUS = \
+ft_lstnew.c \
+ft_lstadd_front.c \
+ft_lstsize.c \
+ft_lstlast.c \
+ft_lstadd_back.c \
+ft_lstdelone.c \
+ft_lstclear.c \
+ft_lstiter.c \
+ft_lstmap.c
+
+OBJ = $(SRCS:%.c=%.o)
+OBJ_BONUS = $(BONUS:%.c=%.o)
 
 all: $(NAME)
 
