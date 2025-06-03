@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: harukaomura <harukaomura@student.42.fr>    +#+  +:+       +#+        */
+/*   By: homura <homura@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 19:55:01 by vscode            #+#    #+#             */
-/*   Updated: 2025/05/22 13:06:08 by harukaomura      ###   ########.fr       */
+/*   Updated: 2025/05/27 19:14:22 by homura           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	while (i < len && haystack[i] != '\0')
 	{
 		j = 0;
-		while (needle[j]!='\0' && (i + j) < len && haystack[i + j] == needle[j])
+		while (needle[j] && (i + j) < len && haystack[i + j] == needle[j])
 			j++;
 		if (needle[j] == '\0')
-			return (char *)(haystack + i);
+			return ((char *)(haystack + i));
 		i++;
 	}
 	return (NULL);

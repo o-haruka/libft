@@ -3,26 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: harukaomura <harukaomura@student.42.fr>    +#+  +:+       +#+        */
+/*   By: homura <homura@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 20:12:34 by vscode            #+#    #+#             */
-/*   Updated: 2025/05/12 21:41:33 by harukaomura      ###   ########.fr       */
+/*   Updated: 2025/05/27 20:06:08 by homura           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-// # include <limits.h>
 # include <stddef.h>
 # include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
-typedef struct s_list
-{
-void *content;
-struct s_list *next;
-} t_list;
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);

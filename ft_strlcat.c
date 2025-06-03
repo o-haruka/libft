@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: harukaomura <harukaomura@student.42.fr>    +#+  +:+       +#+        */
+/*   By: homura <homura@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 19:49:23 by vscode            #+#    #+#             */
-/*   Updated: 2025/05/19 02:30:14 by harukaomura      ###   ########.fr       */
+/*   Updated: 2025/05/27 18:32:25 by homura           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		return (len_src);
 	if (dstsize <= len_dst)
 		return (dstsize + len_src);
-	
 	while (src[i] && len_dst + i + 1 < dstsize)
 	{
 		dst[len_dst + i] = src[i];
 		i++;
 	}
-	
 	dst[len_dst + i] = '\0';
 	return (len_dst + len_src);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: harukaomura <harukaomura@student.42.fr>    +#+  +:+       +#+        */
+/*   By: homura <homura@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 19:39:28 by vscode            #+#    #+#             */
-/*   Updated: 2025/05/27 17:44:23 by harukaomura      ###   ########.fr       */
+/*   Updated: 2025/05/27 18:31:54 by homura           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
 		return ;
-		
 	while (*s)
 	{
 		ft_putchar_fd(*s, fd);
